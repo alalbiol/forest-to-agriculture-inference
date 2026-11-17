@@ -1,0 +1,12 @@
+{
+  "note": "Thresholds chosen on the benchmark validation split (maximum recall with at most 10% false positives among forest-loss controls). Scores are uncalibrated rankings; these thresholds are specific to the Para/Mato Grosso 2020-2024 benchmark.",
+  "source": "brazil-forest-to-agriculture-benchmark v1.0.0, reviewer_revision/results/operating_points.json",
+  "temporal": {
+    "method": "postclassification",
+    "threshold": 0.5608620047569275
+  },
+  "after_only": {
+    "method": "endpoint_terrafm",
+    "threshold": 0.7643408179283142
+  }
+}

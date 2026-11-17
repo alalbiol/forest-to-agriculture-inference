@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-17",
+  "status": "passed",
+  "head_refit": {
+    "script": "training/head/train_head.py",
+    "input": "benchmark v1.0.0 cache/features, accepted train/validation chips in published/dataset_c/reference.csv order",
+    "train_chips": 448,
+    "validation_chips": 136,
+    "train_tokens": 81713,
+    "validation_tokens": 24544,
+    "selected_epoch": 13,
+    "result": "state_dict, mean and std identical to heads/landuse_head.pt (torch.equal); validation loss 0.5992509021180074 in both"
+  },
+  "patch_labels": {
+    "script": "training/head/extract_tokens.py token_labels()",
+    "input": "benchmark cache/labels after-maps mapped to class indices (TerraClass 1->0, 2->1, 3/4->2, 10->3)",
+    "chips": 732,
+    "mismatches": 0
+  },
+  "threshold_selection": {
+    "script": "training/head/select_thresholds.py choose()",
+    "input": "benchmark validation predictions excluding stable forest (72 agriculture, 32 other loss)",
+    "result": {
+      "postclassification": {
+        "threshold": 0.5608620047569275,
+        "matches_released": true
+      },
+      "endpoint_terrafm": {
+        "threshold": 0.7643408179283142,
+        "matches_released": true
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "status": "passed",
+  "tolerance": 0.0001,
+  "max_abs_error": 4.112720489501953e-06,
+  "device": "cpu",
+  "torch": "2.10.0+cu128",
+  "samples": [
+    {
+      "chip_id": "brazil_para__last_agriculture__561423",
+      "reference": "forest loss to agriculture",
+      "temporal_score": 0.9015140533447266,
+      "after_only_score": 0.9888784885406494,
+      "max_abs_error": 2.4437904357910156e-06
+    },
+    {
+      "chip_id": "brazil_para__last_agriculture__1038454",
+      "reference": "forest loss to agriculture",
+      "temporal_score": 0.2522472143173218,
+      "after_only_score": 0.3809875547885895,
+      "max_abs_error": 4.0531158447265625e-06
+    },
+    {
+      "chip_id": "brazil_para__last_mining__682319",
+      "reference": "forest loss to mining",
+      "temporal_score": 0.04356904327869415,
+      "after_only_score": 0.04603715240955353,
+      "max_abs_error": 1.7248094081878662e-06
+    },
+    {
+      "chip_id": "brazil_para__last_secondary_forest__715289",
+      "reference": "forest loss to secondary forest",
+      "temporal_score": 0.7195684909820557,
+      "after_only_score": 0.9714886546134949,
+      "max_abs_error": 4.112720489501953e-06
+    },
+    {
+      "chip_id": "brazil_matogrosso__stable_agriculture__041",
+      "reference": "agriculture in 2020 and 2024",
+      "temporal_score": 0.020658694207668304,
+      "after_only_score": 0.9736314415931702,
+      "max_abs_error": 1.3709068298339844e-06
+    },
+    {
+      "chip_id": "brazil_para__stable_agriculture__015",
+      "reference": "agriculture in 2020 and 2024",
+      "temporal_score": 0.7791332602500916,
+      "after_only_score": 0.9976685643196106,
+      "max_abs_error": 2.682209014892578e-06
+    }
+  ]
+}

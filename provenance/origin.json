@@ -1,0 +1,39 @@
+{
+  "backbone": {
+    "architecture": "TerraFM-B (ViT-B/16, 12 blocks, 768-d) with an added 14-channel early-fusion patch embedding (Sentinel-1 VV/VH + Sentinel-2 12 bands)",
+    "initialisation": "TerraFM-B public weights (Danish et al., 2025; https://github.com/mbzuai-oryx/TerraFM, MIT)",
+    "fine_tuning": {
+      "data": "BigEarthNet Sentinel-1/2 patches, 19-class multi-label nomenclature",
+      "epochs": 10,
+      "optimizer": "AdamW, lr 1e-4, weight decay 0.05, cosine schedule, 5 warm-up epochs",
+      "backbone_frozen_epochs": 5,
+      "input": "224 x 224, BigEarthNet band statistics",
+      "validation_metrics": {
+        "ap_macro": 0.7758,
+        "ap_micro": 0.8667,
+        "f1_macro": 0.6971,
+        "f1_micro": 0.7692
+      },
+      "selected": "best validation macro AP: 9th of 10 epochs (stored epoch index 8)",
+      "code": "training/backbone/train.py with training/backbone/finetune_terrafm_early_fusion.yaml (provided as used; not re-run)"
+    },
+    "released_file": "checkpoints/terrafm_b_bigearthnet_early_fusion.pt (backbone tensors only; see checkpoint.json)"
+  },
+  "landuse_head": {
+    "file": "heads/landuse_head.pt",
+    "sha256": "6f87f8fba4a68fb90238b430495a1adebc3efbb2c5c52adf16155168d3c3e9ad",
+    "architecture": "one linear 768 -> 4 token classifier on frozen block-11 tokens, with stored input mean/std",
+    "classes": [
+      "primary_forest",
+      "secondary_forest",
+      "agriculture",
+      "mining"
+    ],
+    "training_data": "Brazil benchmark main dataset, training split: 448 chips, 81,713 tokens labelled from TerraClass 2024 (token kept when one class covers >= 80%)",
+    "validation": "136 chips, 24,544 tokens; epoch selected by validation loss",
+    "optimizer": "AdamW, lr 1e-3, weight decay 0.01, 4096-token batches, square-root inverse-frequency class weights, seed 20261001",
+    "source": "brazil-forest-to-agriculture-benchmark v1.0.0, published/dataset_c/tokens_landuse_head.pt (identical file)",
+    "code": "training/head/train_head.py (reproduces this file exactly; provenance/head_training_check.json)"
+  },
+  "operating_points": "heads/operating_points.json, from the benchmark validation split"
+}

@@ -1,0 +1,48 @@
+# Configuration used to fine-tune the released backbone (TerraFM-B, early S1/S2 fusion,
+# BigEarthNet v2, 19 classes). Only the data and weight paths are placeholders.
+experiment_name: "terrafm-finetune-early-fusion"
+
+model:
+  num_classes: 19
+  pretrained_path: "/path/to/TerraFM-B.pth"   # public TerraFM-B weights
+  freeze_backbone: true      # backbone frozen except the new early-fusion embedding...
+  freeze_epochs: 5           # ...until this epoch, then everything is trained
+  dropout: 0.1
+
+data:
+  data_dirs:                 # BigEarthNet v2 in ConfigILM's layout
+    images_lmdb: "/path/to/BigEarthNet/Encoded-BigEarthNet"
+    metadata_parquet: "/path/to/BigEarthNet/metadata.parquet"
+    metadata_snow_cloud_parquet: "/path/to/BigEarthNet/metadata_for_patches_with_snow_cloud_or_shadow.parquet"
+  band_combination: "ALL"    # VV, VH, B01-B12: the order inference expects
+  img_size: [224, 224]
+  batch_size: 32
+  num_workers: 4
+
+training:
+  num_epochs: 10
+  learning_rate: 1.0e-4
+  weight_decay: 0.05
+  optimizer: "adamw"
+  scheduler: "cosine"
+  warmup_epochs: 5
+  gradient_clip: 1.0
+  mixed_precision: true
+  label_smoothing: 0.0
+
+augmentation:
+  horizontal_flip: 0.5
+  vertical_flip: 0.5
+  rotation_degrees: 0
+
+checkpoint:
+  save_dir: "checkpoints_early_fusion"
+  save_freq: 5
+
+wandb:
+  enabled: false             # the original run logged to Weights & Biases
+  project: "bigearthnet"
+  entity: null
+  run_name: "terrafm-early-fusion"
+
+seed: 42

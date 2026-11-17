@@ -1,0 +1,29 @@
+{
+  "filename": "terrafm_b_bigearthnet_early_fusion.pt",
+  "bytes": 484909232,
+  "sha256": "f90bd1342d816f92454150d3577c510b50a7f4f723a9e51c36a2f4d774d23061",
+  "tensors": 167,
+  "parameters": 121213440,
+  "source": {
+    "filename": "TerraFM_EarlyFusion.pth",
+    "bytes": 1332164514,
+    "sha256": "5a7c585e66752364360d54f21c6c4197b87cc85eec670c11650012d86c8d7bdc",
+    "epoch": 8,
+    "metrics": {
+      "train_loss": 0.13460351898664905,
+      "loss": 0.16348038087370806,
+      "ap_macro": 0.7758219757175177,
+      "ap_micro": 0.866749307219765,
+      "f1_macro": 0.6970884594261367,
+      "f1_micro": 0.7692225836216516
+    },
+    "dropped_modules": [
+      "classifier"
+    ],
+    "dropped_top_level_keys": [
+      "epoch",
+      "optimizer_state_dict",
+      "metrics"
+    ]
+  }
+}

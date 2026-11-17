@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-17",
+  "status": "passed",
+  "script": "scripts/download_gee.py --metres 440",
+  "check": "Fresh Earth Engine downloads compared with the study imagery bundled in samples/inputs",
+  "chips": [
+    "brazil_para__last_agriculture__561423",
+    "brazil_matogrosso__stable_agriculture__041"
+  ],
+  "years": [
+    2020,
+    2024
+  ],
+  "result": "imagery and qa arrays bit-identical for all four chip-years"
+}

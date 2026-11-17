@@ -1,0 +1,63 @@
+{
+  "note": "Scores saved in the benchmark (features extracted on GPU). verify_samples.py requires agreement within 1e-4.",
+  "years": [
+    2020,
+    2024
+  ],
+  "samples": [
+    {
+      "chip_id": "brazil_para__last_agriculture__561423",
+      "lon": -50.87620391,
+      "lat": -3.53419854,
+      "reference": "forest loss to agriculture",
+      "source": "forest-loss test set",
+      "temporal_score": 0.9015164971351624,
+      "after_only_score": 0.9888785481452942
+    },
+    {
+      "chip_id": "brazil_para__last_agriculture__1038454",
+      "lon": -57.57448378,
+      "lat": -5.21291461,
+      "reference": "forest loss to agriculture",
+      "source": "forest-loss test set",
+      "temporal_score": 0.2522491216659546,
+      "after_only_score": 0.3809916079044342
+    },
+    {
+      "chip_id": "brazil_para__last_mining__682319",
+      "lon": -56.45714384,
+      "lat": -5.792253,
+      "reference": "forest loss to mining",
+      "source": "forest-loss test set",
+      "temporal_score": 0.04357067868113518,
+      "after_only_score": 0.046038877218961716
+    },
+    {
+      "chip_id": "brazil_para__last_secondary_forest__715289",
+      "lon": -55.65776589,
+      "lat": -1.5733049,
+      "reference": "forest loss to secondary forest",
+      "source": "forest-loss test set",
+      "temporal_score": 0.7195726037025452,
+      "after_only_score": 0.9714881181716919
+    },
+    {
+      "chip_id": "brazil_matogrosso__stable_agriculture__041",
+      "lon": -54.08720923,
+      "lat": -12.5104781,
+      "reference": "agriculture in 2020 and 2024",
+      "source": "established-agriculture control",
+      "temporal_score": 0.02065788395702839,
+      "after_only_score": 0.9736328125
+    },
+    {
+      "chip_id": "brazil_para__stable_agriculture__015",
+      "lon": -48.00208995,
+      "lat": -1.28102793,
+      "reference": "agriculture in 2020 and 2024",
+      "source": "established-agriculture control",
+      "temporal_score": 0.7791305780410767,
+      "after_only_score": 0.9976685643196106
+    }
+  ]
+}
