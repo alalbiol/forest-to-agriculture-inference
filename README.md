@@ -15,7 +15,7 @@ Score a pair of Sentinel-1/2 image chips, one from before a cutoff date and one 
 
 **Publication status:** the manuscript is under revision. It will be linked here, or its arXiv version, after acceptance.
 
-**Release:** [GitHub v1.0.0](https://github.com/alalbiol/forest-to-agriculture-inference/releases/tag/v1.0.0). **EOTDL model:** [`forest-to-agriculture-inference`](https://www.eotdl.com/models/forest-to-agriculture-inference); the EOTDL version is recorded in `provenance/releases/` after upload.
+**Released asset:** [GitHub v1.0.0](https://github.com/alalbiol/forest-to-agriculture-inference/releases/tag/v1.0.0) corresponds to **[EOTDL model version 1](https://www.eotdl.com/models/forest-to-agriculture-inference)**. The exact source commit is `4d6a7bc918345357690a980707f8cfd8cc66a8f9`. All 51 uploaded payload files were verified against this commit. See [the release record](provenance/releases/v1.0.0.json) for the model ID and manifest checksum.
 GitHub holds the code, the land-use classifier, thresholds and six real example chips. The EOTDL snapshot additionally holds the 485 MB backbone checkpoint.
 
 The benchmark data and the code that reproduces the paper's results are a separate asset: [brazil-forest-to-agriculture-benchmark](https://github.com/alalbiol/brazil-forest-to-agriculture-benchmark).

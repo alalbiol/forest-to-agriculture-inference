@@ -1,0 +1,13 @@
+{
+  "model_name": "forest-to-agriculture-inference",
+  "model_id": "6afc5814dbc0af5e134f7e00",
+  "eotdl_version": 1,
+  "github_commit": "4d6a7bc918345357690a980707f8cfd8cc66a8f9",
+  "github_tag": "v1.0.0",
+  "manifest_sha256": "4d16708b258014cfd4c438c8b6cec0fc079a592b294b39ef73dd24cc584abbee",
+  "payload_files": 51,
+  "github_release_url": "https://github.com/alalbiol/forest-to-agriculture-inference/releases/tag/v1.0.0",
+  "eotdl_url": "https://www.eotdl.com/models/forest-to-agriculture-inference",
+  "verified_date": "2026-11-17",
+  "verification": "EOTDL catalog SHA-1 of every uploaded file matched the snapshot built from github_commit; the uploaded release-manifest.json is byte-identical"
+}

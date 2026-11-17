@@ -6,11 +6,9 @@ classifier, thresholds and samples. The snapshot is the complete tagged Git tree
 backbone checkpoint (`checkpoints/terrafm_b_bigearthnet_early_fusion.pt`, 485 MB),
 which is not stored in Git.
 
-## GitHub and EOTDL version mapping
+## Published version
 
-GitHub release `v1.0.0` identifies the code. The EOTDL version number is assigned on
-upload and is not derived from the Git tag. After upload, record it in
-`provenance/releases/v1.0.0.json` and the README.
+GitHub release `v1.0.0` (commit `4d6a7bc918345357690a980707f8cfd8cc66a8f9`) corresponds to EOTDL model version **1** (ID `6afc5814dbc0af5e134f7e00`). The EOTDL catalog checksum of every one of the 51 payload files, and the uploaded `release-manifest.json` itself, were checked against the snapshot built from that commit. See `provenance/releases/v1.0.0.json`. Changes on `main` after this tag are not part of the upload; a new upload creates a new EOTDL version.
 
 ## Build the snapshot
 
