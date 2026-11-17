@@ -43,6 +43,8 @@ All four classes need training patches. The study used 448 training chips (81,71
 
 ## Backbone fine-tuning on BigEarthNet
 
+The same backbone, with its 19-class head, is released as `terrafm_early` in [sentinel-landcover-inference](https://github.com/alalbiol/sentinel-landcover-inference). That asset also holds the BigEarthNet test-set evaluation and the training code for all three fusion variants.
+
 `backbone/train.py` is the AI4DIS script that produced the released backbone, trimmed to the TerraFM early-fusion configuration. The settings are in `backbone/finetune_terrafm_early_fusion.yaml`:
 
 - **Start:** the public TerraFM-B weights, plus a new 14-channel early-fusion patch embedding (S1 VV, VH and S2 B01–B12 enter one convolution together).

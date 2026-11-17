@@ -8,7 +8,7 @@ Rank 440 m Sentinel-1/2 chips by evidence that primary forest present before a c
 
 | Component | Description | Trained on |
 |---|---|---|
-| Backbone | TerraFM-B (ViT-B/16) with a 14-channel early S1/S2 fusion patch embedding, frozen | TerraFM-B public weights, fine-tuned for 10 epochs on BigEarthNet v2 19-class multi-label (best validation macro AP 0.776 at the 9th epoch); code in `training/backbone/` |
+| Backbone | TerraFM-B (ViT-B/16) with a 14-channel early S1/S2 fusion patch embedding, frozen | TerraFM-B public weights, fine-tuned for 10 epochs on BigEarthNet v2 19-class multi-label (best validation macro AP 0.776 at the 9th epoch); code in `training/backbone/`. The complete classifier, with BigEarthNet test results (macro AP 0.673), is `terrafm_early` in [sentinel-landcover-inference](https://github.com/alalbiol/sentinel-landcover-inference) |
 | Land-use head | Linear 768 → 4 on block-11 patch tokens, with stored input standardisation | 448 training chips (81,713 tokens) of the Brazil benchmark, labelled from TerraClass 2024; epoch chosen by validation loss on 136 chips; code in `training/head/` |
 | Thresholds | Temporal 0.561, after-only 0.764 (`heads/operating_points.json`) | Maximum validation recall with ≤10% false positives among forest-loss controls |
 
